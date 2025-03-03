@@ -1,0 +1,26 @@
+<p>bibliotheque works!</p>
+<h1>Mes Livres</h1>
+<ul>
+  <li *ngFor="let livre of livres">
+    Titre : {{ livre.titre }}<br>
+    Auteur : {{ livre.auteur }}<br>
+    Année de publication : {{ livre.anneePubli }}
+  </li>
+</ul>
+
+<h2>Ajouter un nouveau livre</h2>
+<form (ngSubmit)="ajouterLivre($event)">
+  <div>
+    <label for="titre">Titre :</label>
+    <input type="text" id="titre" [(ngModel)]="nouveauLivre.titre" name="titre">
+  </div>
+  <div>
+    <label for="auteur">Auteur :</label>
+    <input type="text" id="auteur" [(ngModel)]="nouveauLivre.auteur" name="auteur">
+  </div>
+  <div>
+    <label for="anneePubli">Année de publication :</label>
+    <input type="number" id="anneePubli" [(ngModel)]="nouveauLivre.anneePubli" name="anneePubli">
+  </div>
+  <button type="submit">Ajouter le livre</button>
+</form>
